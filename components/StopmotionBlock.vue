@@ -1,10 +1,19 @@
 <template>
   <div class="stopmotion-block">
-    <div class="image" v-html="imageArray[currentImg]"></div>
+    <div
+      :style="`background-image: url(${require('@/assets/stopmotion-bg/' +
+        images.source +
+        '/' +
+        currentImg +
+        images.format)}`"
+      class="image"
+    ></div>
   </div>
 </template>
 
 <script>
+import { loadImgs } from '@/utils.js'
+
 export default {
   props: {
     images: {
@@ -18,19 +27,16 @@ export default {
       imageArray: [],
     }
   },
-  mounted() {
-    this.loadImgs()
-    window.addEventListener('scroll', this.onScroll)
-  },
   async mounted() {
-    let imgs = []
-    for (let i = 1; i <= images.amount; i++) {
-      imgs.pushrequire(
-        '@/assets/stopmotion-bg/' +
+    window.addEventListener('scroll', this.onScroll)
+    const imgs = []
+    for (let i = 1; i <= this.images.amount; i++) {
+      imgs.push(
+        require('@/assets/stopmotion-bg/' +
           this.images.source +
           '/' +
           (i + 1) +
-          this.images.format
+          this.images.format)
       )
     }
 
@@ -43,9 +49,8 @@ export default {
     //     image.src = require('@/assets/stopmotion-bg/' +
     //       this.images.source +
     //       '/' +
-    //       (i + 1) +
+    //       (i+1) +
     //       this.images.format)
-    //     console.log('☝', image)
     //     this.imageArray.push(image)
     //   }
     // },
