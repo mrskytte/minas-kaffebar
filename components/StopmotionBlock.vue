@@ -1,10 +1,13 @@
 <template>
   <div class="stopmotion-block">
     <div
+      v-for="n in images.amount"
+      :key="n"
+      :class="{ hide: n !== currentImg }"
       :style="`background-image: url(${require('@/assets/stopmotion-bg/' +
         images.source +
         '/' +
-        currentImg +
+        n +
         images.format)}`"
       class="image"
     ></div>
@@ -24,36 +27,12 @@ export default {
   data() {
     return {
       currentImg: 1,
-      imageArray: [],
     }
   },
-  async mounted() {
+  mounted() {
     window.addEventListener('scroll', this.onScroll)
-    const imgs = []
-    for (let i = 1; i <= this.images.amount; i++) {
-      imgs.push(
-        require('@/assets/stopmotion-bg/' +
-          this.images.source +
-          '/' +
-          (i + 1) +
-          this.images.format)
-      )
-    }
-
-    await loadImgs(imgs)
   },
   methods: {
-    // loadImgs() {
-    //   for (let i = 0; i < this.images.amount; i++) {
-    //     const image = new Image()
-    //     image.src = require('@/assets/stopmotion-bg/' +
-    //       this.images.source +
-    //       '/' +
-    //       (i+1) +
-    //       this.images.format)
-    //     this.imageArray.push(image)
-    //   }
-    // },
     onScroll() {
       const currentImg = Math.floor(window.scrollY / 150)
       if (
@@ -81,5 +60,9 @@ export default {
   left: 5%;
   background-size: cover;
   background-position: center;
+}
+
+.hide {
+  opacity: 0;
 }
 </style>
