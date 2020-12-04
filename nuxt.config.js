@@ -18,7 +18,10 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/epy2zge.css' },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -54,6 +57,16 @@ export default {
       },
     ],
   ],
+
+  styleResources: {
+    scss: [
+      '@/styles/variables.scss',
+      '@/styles/mixins.scss',
+      '@/styles/reset.scss',
+      '@/styles/main.scss',
+      '@/styles/includes/include-media.scss',
+    ],
+  },
 
   routerModule: {
     keepDefaultRouter: true,
