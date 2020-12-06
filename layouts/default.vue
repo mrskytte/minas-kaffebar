@@ -1,5 +1,13 @@
 <template>
   <div>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v9.0"
+      nonce="3RHVA8Vj"
+    ></script>
     <Nav />
     <Nuxt />
   </div>
