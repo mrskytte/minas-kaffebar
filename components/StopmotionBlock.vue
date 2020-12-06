@@ -1,65 +1,130 @@
 <template>
-  <div class="stopmotion-block">
+  <div
+    ref="stopmotionBlock"
+    class="stopmotion-block"
+    :style="`height: calc(150px * ${data.images.length} + 100vw)`"
+  >
     <div
-      v-for="n in images.amount"
-      :key="n"
-      :class="{ hide: n !== currentImg }"
-      :style="`background-image: url(${require('@/assets/stopmotion-bg/' +
-        images.source +
-        '/' +
-        n +
-        images.format)}`"
-      class="image"
+      class="text-box left"
+      :style="`height: calc(75px * ${data.images.length})`"
+      v-html="data.leftText"
     ></div>
+    <div
+      class="text-box right"
+      :style="`height: calc(75px * ${data.images.length})`"
+      v-html="data.rightText"
+    ></div>
+    <div class="images-wrapper">
+      <div
+        v-for="(image, idx) of data.images"
+        :key="idx"
+        :class="{ hide: idx !== currentImg }"
+        class="image-container"
+      >
+        <img
+          class="image"
+          :src="image.responsiveImage.src"
+          :srcset="image.responsiveImage.srcSet"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { loadImgs } from '@/utils.js'
-
 export default {
   props: {
-    images: {
+    data: {
       type: Object,
       required: true,
     },
   },
   data() {
     return {
-      currentImg: 1,
+      currentImg: 0,
     }
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll)
   },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll)
+  },
   methods: {
     onScroll() {
-      const currentImg = Math.floor(window.scrollY / 150)
+      const blockTop = this.$refs.stopmotionBlock.offsetTop
+      const scrollY = window.scrollY
+      if (blockTop > scrollY) {
+        return
+      }
+      const currentImg = Math.floor((scrollY - blockTop) / 150)
       if (
         currentImg === this.currentImg ||
-        currentImg > this.images.amount ||
-        currentImg < 1
+        currentImg > this.data.images.length - 1 ||
+        currentImg < 0
       ) {
         return
       }
       this.currentImg = currentImg
     },
   },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
-  },
 }
 </script>
 
 <style lang="scss" scoped>
-.image {
-  width: 90%;
-  padding-bottom: 70%;
-  position: fixed;
-  top: 10%;
-  left: 5%;
+.stopmotion-block {
+  position: relative;
+}
+.text-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 60%;
+  ::v-deep {
+    p {
+      width: fit-content;
+      display: block;
+      background-color: $color-white;
+      padding: 8px 8px 8px 0;
+      margin-bottom: 8px;
+    }
+  }
+  &.right {
+    text-align: right;
+    right: 0;
+    top: 50%;
+    align-items: flex-end;
+    ::v-deep {
+      p {
+        padding: 8px 0 8px 8px;
+      }
+    }
+  }
+}
+.images-wrapper {
+  position: sticky;
+  top: $nav-height;
+  height: calc(100vh - 110px);
+}
+.image-container {
+  width: 100%;
+  height: calc(100vh - 110px);
+  position: absolute;
+  top: 0;
   background-size: cover;
   background-position: center;
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .hide {
