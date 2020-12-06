@@ -7,6 +7,9 @@ export default gql`
     logo {
       url
     }
+    comeForThe {
+      text
+    }
     polariodPictures {
       responsiveImage {
         srcSet
@@ -20,7 +23,7 @@ export default gql`
           srcSet
         }
       }
-      leftText(markdown: false)
+      leftText(markdown: true)
       rightText(markdown: true)
     }
   }
