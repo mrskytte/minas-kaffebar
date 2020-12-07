@@ -72,7 +72,7 @@ export default {
     keepDefaultRouter: true,
   },
   router: {
-    base: '/minas-website/',
+    base: '/minas-kaffebar/',
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
