@@ -107,7 +107,6 @@ export default {
       return Math.floor(Math.random() * Math.floor(max))
     },
     setCFT() {
-      console.log('called')
       const randomNumber = this.getRandomNumber(
         this._data.comeForThe.length - 1
       )
