@@ -1,9 +1,31 @@
 <template>
-  <h1>Hello Events</h1>
+  <div>
+    <h1 class="page-headline">Minas Events</h1>
+    <div class="events">
+      <Event v-for="(event, idx) in events" :key="idx" :event="event" />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+import gql from 'graphql-tag'
+import eventPageFragment from '@/queries/eventPageFragment'
+
+export default {
+  async asyncData({ $dato }) {
+    const { data } = await $dato({
+      query: gql`
+        ${eventPageFragment}
+        query {
+          eventPage {
+            ...EventPage
+          }
+        }
+      `,
+    })
+    return data.eventPage
+  },
+}
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>
