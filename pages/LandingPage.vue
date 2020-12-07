@@ -132,7 +132,7 @@ export default {
   align-items: center;
   flex-direction: column;
   .icon {
-    background-image: url('/favicon.svg');
+    background-image: url('/minas-kaffebar/favicon.svg');
     width: 60%;
     padding-top: 60%;
   }

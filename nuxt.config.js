@@ -22,7 +22,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/minas-kaffebar/favicon.svg',
+      },
       { rel: 'stylesheet', href: 'https://use.typekit.net/epy2zge.css' },
     ],
   },

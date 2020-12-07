@@ -69,7 +69,7 @@ export default {
       display: block;
       height: 60px;
       width: 60px;
-      background-image: url('/favicon.svg');
+      background-image: url('/minas-kaffebar/favicon.svg');
     }
     .menu {
       @include button-reset();
