@@ -9,11 +9,12 @@
       nonce="3RHVA8Vj"
     ></script>
     <Nav />
+    <div class="nav-height"></div>
     <Nuxt />
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -31,6 +32,10 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.nav-height {
+  margin-top: $nav-height;
 }
 
 .button--green {
