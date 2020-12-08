@@ -18,6 +18,9 @@
       <h3 class="event-headline">{{ event.headline }}</h3>
       <div class="event-body" v-html="event.body" />
     </div>
+    <div class="event-btn">
+      <Button />
+    </div>
   </div>
 </template>
 
@@ -94,6 +97,10 @@ export default {
   }
   &-body {
     font-size: 14px;
+  }
+  &-btn {
+    text-align: center;
+    padding-bottom: 30px;
   }
 }
 </style>
