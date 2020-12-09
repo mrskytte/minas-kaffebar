@@ -6,18 +6,24 @@
       </div>
     </div>
 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"><LeftArrow /></div>
+    <div class="swiper-button-next"><RightArrow /></div>
   </div>
 </template>
 
 <script>
 import Swiper, { Navigation } from 'swiper'
 import 'swiper/swiper-bundle.css'
+import LeftArrow from '@/assets/icons/left-arrow.svg?inline'
+import RightArrow from '@/assets/icons/right-arrow.svg?inline'
 
 Swiper.use([Navigation])
 
 export default {
+  components: {
+    LeftArrow,
+    RightArrow,
+  },
   props: {
     type: { type: String, required: true },
     data: { type: Array, required: true },
@@ -56,6 +62,20 @@ export default {
     transform: translateY(-10%);
     z-index: 1000;
     box-shadow: 1px 4px 6px 4px rgba(black, 0.2);
+  }
+}
+.swiper-button-prev::after,
+.swiper-container-rtl,
+.swiper-button-next::after {
+  content: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $color-black;
+  svg {
+    background-color: white;
+    border-radius: 50%;
   }
 }
 </style>

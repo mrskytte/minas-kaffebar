@@ -3,7 +3,7 @@
     <h2 class="menu-headline">{{ headline }}</h2>
     <div v-for="(menuItem, idx) in menuItems" :key="idx" class="menu-row">
       <p class="name">{{ menuItem.name }}</p>
-      <p class="price">{{ menuItem.price }}</p>
+      <p class="price">{{ menuItem.price }},-</p>
     </div>
   </div>
 </template>
@@ -50,6 +50,10 @@ export default {
   &-row {
     display: flex;
     justify-content: space-between;
+    .name {
+      font-family: $font-title;
+      font-size: 20px;
+    }
   }
 }
 </style>
