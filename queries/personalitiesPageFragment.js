@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default gql`
-  fragment personalitiesPage on personalitiesPageRecord {
+  fragment PersonalitiesPage on PersonalitiesPageRecord {
     personalities {
       name
       aboutText(markdown: true)

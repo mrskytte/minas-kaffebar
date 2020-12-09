@@ -5,6 +5,15 @@
         <Menu :data="menu" />
       </div>
     </div>
+    <div v-if="type === 'personalities'" class="swiper-wrapper">
+      <div
+        v-for="(personality, idx) in data"
+        :key="idx"
+        class="swiper-slide personality"
+      >
+        <Personality :data="personality" />
+      </div>
+    </div>
 
     <div class="swiper-button-prev"><LeftArrow /></div>
     <div class="swiper-button-next"><RightArrow /></div>
@@ -39,7 +48,7 @@ export default {
       loop: true,
       centeredSlides: true,
       slidesPerView: 'auto',
-      spaceBetween: -25,
+      spaceBetween: this.type === 'personalities' ? -50 : -25,
 
       navigation: {
         nextEl: '.swiper-button-next',
@@ -58,6 +67,9 @@ export default {
   width: 70%;
   transition: transform 0.7s, box-shadow 0.7s;
   box-shadow: 1px 4px 2px 2px rgba(black, 0.1);
+  &.personality {
+    width: 85%;
+  }
   &-active {
     transform: translateY(-10%);
     z-index: 1000;
