@@ -2,7 +2,7 @@ export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
   generate: {
-    routes: ['/'],
+    routes: ['/', '/menus', '/events', '/contact', '/personalities'],
   },
 
   // Target (https://go.nuxtjs.dev/config-target)
