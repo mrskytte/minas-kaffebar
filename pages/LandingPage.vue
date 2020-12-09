@@ -139,17 +139,18 @@ export default {
   .random-text {
     margin-top: -220px;
     display: inline-block;
-    width: 50%;
+    width: 60%;
     text-align: right;
     align-self: flex-start;
-    font-size: 24px;
+    font-size: 28px;
+    font-family: $font-title;
   }
   .random-word {
     display: inline-block;
     position: absolute;
     color: $color-yellow;
-    font-weight: 700;
-    left: 50%;
+    font-weight: 900;
+    left: 60%;
   }
 }
 
