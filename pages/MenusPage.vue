@@ -28,8 +28,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.swiper-container {
-  margin-top: 50px;
-}
-</style>
+<style lang="scss" scoped></style>
