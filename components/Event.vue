@@ -62,6 +62,13 @@ export default {
   &:not(:first-of-type) {
     margin-top: 100px;
   }
+  &-body {
+    ::v-deep {
+      p {
+        line-height: 20px;
+      }
+    }
+  }
   &-image {
     width: 100%;
     padding-top: 60%;
