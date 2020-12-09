@@ -119,6 +119,7 @@ export default {
       a {
         font-family: $font-title;
         font-size: 40px;
+        font-weight: 900;
       }
     }
   }
