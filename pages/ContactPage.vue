@@ -7,6 +7,7 @@
     <h4 class="contact-info phone">
       Call us on <a :href="'tel:' + phone">{{ phone }}</a>
     </h4>
+    <h4 class="map-headline">Find us at</h4>
     <div class="map-wrapper">
       <GMap
         ref="gMap"
@@ -71,11 +72,18 @@ export default {
 
 .map-wrapper {
   width: 90%;
-  margin: 60px auto;
   border: 5px solid $color-yellow;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.map-headline {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: initial;
+  margin: 40px auto 15px;
 }
 .some {
-  padding-bottom: 60px;
   h3 {
     text-align: center;
     font-weight: 900;

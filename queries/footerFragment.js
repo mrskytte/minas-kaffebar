@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default gql`
-  fragment FooterPage on FooterPageRecord {
+  fragment Footer on FooterRecord {
     address
     facebook
     instagram

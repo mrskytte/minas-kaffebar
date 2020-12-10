@@ -53,7 +53,6 @@ export default {
 .image-cluster {
   position: relative;
   margin-top: 100px;
-  margin-bottom: 100px;
 
   .cluster {
     position: relative;

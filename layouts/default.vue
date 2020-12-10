@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="full-wrapper">
     <div id="fb-root"></div>
     <script
       async
@@ -11,6 +11,8 @@
     <Nav />
     <div class="nav-height"></div>
     <Nuxt />
+    <div class="footer-height"></div>
+    <Footer />
   </div>
 </template>
 
@@ -25,6 +27,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+.full-wrapper {
+  position: relative;
+  min-height: calc(100vh - 110px);
+}
+.footer-height {
+  padding-bottom: 60px;
 }
 
 *,
