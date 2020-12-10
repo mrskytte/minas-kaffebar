@@ -1,19 +1,7 @@
 <template>
-  <div
-    ref="stopmotionBlock"
-    class="stopmotion-block"
-    :style="`height: calc(150px * ${data.images.length} + 100vw)`"
-  >
-    <div
-      class="text-box left"
-      :style="`height: calc(75px * ${data.images.length})`"
-      v-html="data.leftText"
-    ></div>
-    <div
-      class="text-box right"
-      :style="`height: calc(75px * ${data.images.length})`"
-      v-html="data.rightText"
-    ></div>
+  <div ref="stopmotionBlock" class="stopmotion-block">
+    <div class="text-box left" v-html="data.leftText"></div>
+    <div class="text-box right" v-html="data.rightText"></div>
     <div class="images-wrapper">
       <div
         v-for="(image, idx) of data.images"
@@ -57,7 +45,8 @@ export default {
       if (blockTop > scrollY) {
         return
       }
-      const currentImg = Math.floor((scrollY - blockTop) / 150)
+      const changeImgEvery = (window.innerHeight * 4) / this.data.images.length
+      const currentImg = Math.floor((scrollY - blockTop) / changeImgEvery)
       if (
         currentImg === this.currentImg ||
         currentImg > this.data.images.length - 1 ||
@@ -74,8 +63,10 @@ export default {
 <style lang="scss" scoped>
 .stopmotion-block {
   position: relative;
+  height: 500vh;
 }
 .text-box {
+  height: 250vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
