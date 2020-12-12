@@ -1,40 +1,61 @@
 <template>
-  <nav class="mobile-nav">
-    <div class="nav-wrap">
-      <nuxt-link class="nav-icon" :to="'/'"> </nuxt-link>
-      <button
-        :class="{ open: isMenuOpen }"
-        class="menu"
-        @click="isMenuOpen = !isMenuOpen"
-      >
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-      </button>
-    </div>
-
-    <transition name="fade">
-      <div v-show="isMenuOpen" class="open-menu">
-        <ul class="nav-list">
-          <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
-            <nuxt-link :to="'/'">Home</nuxt-link>
-          </li>
-          <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
-            <nuxt-link :to="'/events'">Events</nuxt-link>
-          </li>
-          <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
-            <nuxt-link :to="'/menus'">Menus</nuxt-link>
-          </li>
-          <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
-            <nuxt-link :to="'/personalities'">Personalities</nuxt-link>
-          </li>
-          <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
-            <nuxt-link :to="'/contact'">Contact</nuxt-link>
-          </li>
-        </ul>
+  <div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-items">
+          <nuxt-link :to="'/events'">Events</nuxt-link>
+        </li>
+        <li class="nav-items">
+          <nuxt-link :to="'/menus'">Menus</nuxt-link>
+        </li>
+        <li class="nav-items">
+          <nuxt-link class="nav-icon" :to="'/'"> </nuxt-link>
+        </li>
+        <li class="nav-items">
+          <nuxt-link :to="'/personalities'">Personalities</nuxt-link>
+        </li>
+        <li class="nav-items">
+          <nuxt-link :to="'/contact'">Contact</nuxt-link>
+        </li>
+      </ul>
+    </nav>
+    <nav class="mobile-nav">
+      <div class="nav-wrap">
+        <nuxt-link class="nav-icon" :to="'/'"> </nuxt-link>
+        <button
+          :class="{ open: isMenuOpen }"
+          class="menu"
+          @click="isMenuOpen = !isMenuOpen"
+        >
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+        </button>
       </div>
-    </transition>
-  </nav>
+
+      <transition name="fade">
+        <div v-show="isMenuOpen" class="open-menu">
+          <ul class="nav-list">
+            <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
+              <nuxt-link :to="'/'">Home</nuxt-link>
+            </li>
+            <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
+              <nuxt-link :to="'/events'">Events</nuxt-link>
+            </li>
+            <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
+              <nuxt-link :to="'/menus'">Menus</nuxt-link>
+            </li>
+            <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
+              <nuxt-link :to="'/personalities'">Personalities</nuxt-link>
+            </li>
+            <li class="nav-items" @click="isMenuOpen = !isMenuOpen">
+              <nuxt-link :to="'/contact'">Contact</nuxt-link>
+            </li>
+          </ul>
+        </div>
+      </transition>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -48,6 +69,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.nav {
+  display: none;
+  @include media('>tablet') {
+    display: block;
+  }
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 .mobile-nav {
   width: 100vw;
   z-index: 5;
@@ -58,6 +90,9 @@ export default {
   align-items: center;
   height: $nav-height;
   background-color: $color-white;
+  @include media('>tablet') {
+    display: none;
+  }
   .nav-wrap {
     position: relative;
     z-index: 6;
@@ -65,12 +100,6 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: calc(50% + 30px);
-    .nav-icon {
-      display: block;
-      height: 60px;
-      width: 60px;
-      background-image: url('/minas-kaffebar/favicon.svg');
-    }
     .menu {
       @include button-reset();
       height: 18px;
@@ -112,17 +141,27 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    .nav-items {
-      list-style: none;
-      padding: 20px 0;
-      text-align: right;
-      a {
-        font-family: $font-title;
-        font-size: 40px;
-        font-weight: 900;
-      }
-    }
   }
+}
+.nav-items {
+  list-style: none;
+  padding: 20px 0;
+  text-align: right;
+  a {
+    font-family: $font-title;
+    font-size: 40px;
+    font-weight: 900;
+  }
+}
+.router-link-exact-active {
+  color: $color-yellow;
+}
+
+.nav-icon {
+  display: block;
+  height: 60px;
+  width: 60px;
+  background-image: url('/minas-kaffebar/favicon.svg');
 }
 
 .fade-enter-active,
