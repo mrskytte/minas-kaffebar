@@ -59,7 +59,9 @@
       </div>
     </section>
 
-    <ImageCluster :images="polariodPictures" />
+    <section class="images-clusters">
+      <ImageCluster :images="polariodPictures" />
+    </section>
   </div>
 </template>
 
@@ -124,7 +126,6 @@ export default {
 .container {
   margin-top: $nav-height;
 }
-
 .top-section {
   height: calc(100vh - 110px);
   display: flex;
@@ -135,6 +136,14 @@ export default {
     background-image: url('/minas-kaffebar/favicon.svg');
     width: 60%;
     padding-top: 60%;
+    @include media('>phone') {
+      width: 40%;
+      padding-top: 40%;
+    }
+    @include media('>tablet') {
+      width: 30%;
+      padding-top: 30%;
+    }
   }
   .random-text {
     margin-top: -220px;
@@ -144,6 +153,16 @@ export default {
     align-self: flex-start;
     font-size: 28px;
     font-family: $font-title;
+    @include media('>phone') {
+      width: 50%;
+      margin-top: -100;
+      font-size: 48px;
+    }
+    @include media('>tablet') {
+      width: 50%;
+      margin-top: 0;
+      font-size: 48px;
+    }
   }
   .random-word {
     display: inline-block;
@@ -151,10 +170,14 @@ export default {
     color: $color-yellow;
     font-weight: 900;
     left: 60%;
+    @include media('>phone') {
+      left: 50%;
+    }
   }
 }
 
 .find-us {
+  margin-top: 40px;
   .headline {
     text-align: center;
   }
@@ -173,6 +196,11 @@ export default {
     width: 90%;
     margin: auto;
   }
+}
+
+.images-clusters {
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .fade-enter-active,

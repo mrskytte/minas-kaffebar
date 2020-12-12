@@ -79,7 +79,7 @@ export default {
       width: fit-content;
       display: block;
       background-color: $color-white;
-      padding: 8px 8px 8px 0;
+      padding: 8px 8px 8px 8px;
       margin-bottom: 8px;
     }
   }
@@ -90,7 +90,7 @@ export default {
     align-items: flex-end;
     ::v-deep {
       p {
-        padding: 8px 0 8px 8px;
+        padding: 8px 8px 8px 8px;
       }
     }
   }

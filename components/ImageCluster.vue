@@ -58,32 +58,87 @@ export default {
     position: relative;
     height: 400px;
     margin-top: 30px;
+
+    @include media('>phone') {
+      height: 600px;
+      &.second {
+        padding-bottom: 130px;
+      }
+    }
+    @include media('>tablet') {
+      height: 700px;
+      .polaroid {
+        left: 5%;
+      }
+      &.second .polaroid {
+        left: 15%;
+      }
+    }
   }
 }
 .polaroid-wrap {
   &:nth-child(1) .polaroid {
     z-index: 1;
     transform: translateX(25%) rotate(-15deg);
+    @include media('>phone') {
+      transform: translateX(40%) rotate(-15deg);
+    }
+    @include media('>tablet') {
+      width: 210px;
+      height: 245px;
+    }
   }
   &:nth-child(2) .polaroid {
     z-index: 2;
     transform: translateX(130%) rotate(18deg);
+    @include media('>phone') {
+      transform: translateX(230%) rotate(18deg);
+    }
+    @include media('>tablet') {
+      width: 210px;
+      height: 245px;
+    }
   }
   &:nth-child(3) .polaroid {
     z-index: 1;
     transform: translate(80%, 80%);
+    @include media('>phone') {
+      transform: translate(120%, 80%);
+    }
+    @include media('>tablet') {
+      width: 210px;
+      height: 245px;
+    }
   }
   &:nth-child(4) .polaroid {
     z-index: 2;
     transform: translate(185%, 95%) rotate(-25deg);
+    @include media('>phone') {
+      transform: translate(285%, 95%) rotate(-25deg);
+    }
+    @include media('>tablet') {
+      width: 210px;
+      height: 245px;
+    }
   }
   &:nth-child(5) .polaroid {
     z-index: 1;
     transform: translate(30%, 160%) rotate(-15deg);
+    @include media('>tablet') {
+      width: 210px;
+      height: 245px;
+    }
   }
   &:nth-child(6) .polaroid {
     z-index: 2;
     transform: translate(160%, 182%);
+    @include media('>phone') {
+      transform: translate(200%, 182%);
+    }
+    @include media('>tablet') {
+      width: 210px;
+      height: 245px;
+    }
   }
 }
 .polaroid {
@@ -95,6 +150,14 @@ export default {
   left: 0;
   position: absolute;
   box-shadow: 2px 2px 4px 1px rgba($color-black, 0.2);
+  @include media('>phone') {
+    width: 180px;
+    height: 210px;
+  }
+  @include media('>tablet') {
+    width: 210px;
+    height: 245px;
+  }
 
   .image-wrap {
     width: 100%;
