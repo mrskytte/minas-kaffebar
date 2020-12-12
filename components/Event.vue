@@ -59,8 +59,17 @@ export default {
   box-shadow: 2px 2px 4px 2px rgba($color-black, 0.1);
   border-radius: 4px;
   margin-top: 60px;
+  @include media('>phone') {
+    width: 45%;
+  }
+  @include media('>tablet') {
+    width: 40%;
+  }
   &:not(:first-of-type) {
     margin-top: 100px;
+    @include media('>phone') {
+      margin-top: 60px;
+    }
   }
   &-body {
     ::v-deep {
@@ -97,6 +106,8 @@ export default {
   }
   &-text-content {
     padding: 0 1rem 1rem;
+    height: 180px;
+    overflow: scroll;
   }
   &-headline {
     font-size: 20px;

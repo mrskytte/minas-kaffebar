@@ -9,14 +9,16 @@
     </h4>
     <h4 class="map-headline">Find us at</h4>
     <div class="map-wrapper">
-      <GMap
-        ref="gMap"
-        :center="center"
-        :options="{ fullscreenControl: false }"
-        :zoom="15"
-      >
-        <GMapMarker :position="center"> </GMapMarker>
-      </GMap>
+      <div class="map">
+        <GMap
+          ref="gMap"
+          :center="center"
+          :options="{ fullscreenControl: false }"
+          :zoom="15"
+        >
+          <GMapMarker :position="center"> </GMapMarker>
+        </GMap>
+      </div>
     </div>
     <div class="some">
       <h3>Visit us on</h3>
@@ -63,6 +65,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  @include container();
+}
 .contact-info {
   font-weight: 700;
   text-transform: initial;
@@ -75,6 +80,29 @@ export default {
   border: 5px solid $color-yellow;
   margin: auto;
   margin-bottom: 30px;
+  padding-top: 60%;
+  position: relative;
+  @include media('<=tablet') {
+    padding-bottom: 100%;
+    width: 100%;
+    margin: auto;
+  }
+  .map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    ::v-deep {
+      .GMap {
+        height: 100%;
+      }
+      .GMap__Wrapper {
+        height: 100%;
+      }
+    }
+  }
 }
 .map-headline {
   text-align: center;

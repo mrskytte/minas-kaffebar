@@ -70,6 +70,18 @@ export default {
   &.personality {
     width: 85%;
   }
+  @include media('>phone') {
+    width: 50%;
+    &.personality {
+      width: 50%;
+    }
+  }
+  @include media('>tablet') {
+    width: 40%;
+    &.personality {
+      width: 40%;
+    }
+  }
   &-active {
     transform: translateY(-10%);
     z-index: 1000;

@@ -124,6 +124,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  @include container();
   margin-top: $nav-height;
 }
 .top-section {

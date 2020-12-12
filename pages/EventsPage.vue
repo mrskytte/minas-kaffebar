@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="event-page">
     <h1 class="page-headline">Minas Events</h1>
     <div class="events">
       <Event v-for="(event, idx) in events" :key="idx" :event="event" />
@@ -28,4 +28,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.event-page {
+  @include container();
+}
+.events {
+  @include media('>phone') {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @include media('>tablet') {
+  }
+}
+</style>

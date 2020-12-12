@@ -4,10 +4,10 @@
   margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
-  padding-top: 120px;
   padding-bottom: 80px;
-  @include media('<=desktop') {
-    padding-top: 48px;
+  @include media('<=tablet') {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

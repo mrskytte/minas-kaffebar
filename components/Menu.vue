@@ -44,6 +44,7 @@ export default {
   width: 100%;
   background-color: $color-yellow;
   padding: 10px 20px;
+
   &-headline {
     text-align: center;
   }

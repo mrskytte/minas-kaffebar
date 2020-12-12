@@ -49,6 +49,7 @@ export default {
     transform: rotate(-7deg) translateY(-10px);
     transform-origin: center;
     text-transform: capitalize;
+    margin-bottom: 20px;
   }
   .body {
     width: 90%;
