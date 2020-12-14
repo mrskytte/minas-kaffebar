@@ -74,8 +74,14 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  @include container();
+  padding: 0 5%;
   display: none;
+  width: 100vw;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  height: $nav-height;
+  background-color: $color-white;
   @include media('>tablet') {
     display: block;
   }
@@ -158,9 +164,12 @@ export default {
   padding: 20px 0;
   text-align: right;
   a {
-    font-family: $font-title;
-    font-size: 40px;
-    font-weight: 900;
+    font-family: $font-primary;
+    font-size: 24px;
+    font-weight: 700;
+    &:hover {
+      color: $color-yellow;
+    }
   }
 }
 .router-link-exact-active {
