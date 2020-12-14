@@ -38,9 +38,10 @@
           >
         </div>
         <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
           /* curator-feed-default-feed-layout */
           ;(function () {
+            console.log('hello world')
             var i,
               e,
               d = document,
@@ -52,7 +53,7 @@
             e = d.getElementsByTagName(s)[0]
             e.parentNode.insertBefore(i, e)
           })()
-        </script>
+        </script> -->
       </div>
       <div class="facebook ribbons">
         <h2 class="title">On Facebook <Facebook /></h2>
@@ -122,6 +123,7 @@ export default {
     this.interval = setInterval(() => {
       this.setCFT()
     }, 1200)
+    this.curator()
   },
   beforeDestroy() {
     clearInterval(this.interval)
@@ -139,6 +141,22 @@ export default {
         return
       }
       this.cft = randomNumber
+    },
+    curator() {
+      /* eslint-disable one-var, prefer-const */
+      ;(function () {
+        console.log('hello world')
+        let i,
+          e,
+          d = document,
+          s = 'script'
+        i = d.createElement('script')
+        i.async = 1
+        i.src =
+          'https://cdn.curator.io/published/771a87ef-0634-4442-a3c1-2b84560776b3.js'
+        e = d.getElementsByTagName(s)[0]
+        e.parentNode.insertBefore(i, e)
+      })()
     },
   },
 }
