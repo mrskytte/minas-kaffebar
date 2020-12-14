@@ -64,6 +64,7 @@ export default {
 .stopmotion-block {
   position: relative;
   height: 500vh;
+  margin-bottom: 60px;
 }
 .text-box {
   height: 250vh;
