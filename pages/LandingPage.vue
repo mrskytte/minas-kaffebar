@@ -27,22 +27,44 @@
       <StopmotionBlock :data="oneStopmotion" />
     </section>
 
-    <section class="find-us">
+    <section ref="content" class="find-us">
       <h1 class="headline">Find us!</h1>
-      <div class="instagram">
+      <div class="instagram ribbons">
         <h2 class="title">On instagram <Instagram /></h2>
+        <!-- Place <div> tag where you want the feed to appear -->
+        <div id="curator-feed-default-feed-layout">
+          <a href="https://curator.io" target="_blank" class="crt-logo crt-tag"
+            >Powered by Curator.io</a
+          >
+        </div>
+        <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+        <script type="text/javascript">
+          /* curator-feed-default-feed-layout */
+          ;(function () {
+            var i,
+              e,
+              d = document,
+              s = 'script'
+            i = d.createElement('script')
+            i.async = 1
+            i.src =
+              'https://cdn.curator.io/published/771a87ef-0634-4442-a3c1-2b84560776b3.js'
+            e = d.getElementsByTagName(s)[0]
+            e.parentNode.insertBefore(i, e)
+          })()
+        </script>
       </div>
-      <div class="facebook">
+      <div class="facebook ribbons">
         <h2 class="title">On Facebook <Facebook /></h2>
         <div class="facebook-ribbon">
           <div
             class="fb-page"
             data-href="https://www.facebook.com/minaskaffebar"
-            data-tabs=""
-            data-width=""
-            data-height=""
+            data-tabs="messages"
+            data-width="2000"
+            data-height="300"
             data-small-header="false"
-            data-adapt-container-width="true"
+            data-adapt-container-width="false"
             data-hide-cover="false"
             data-show-facepile="false"
           >
@@ -124,10 +146,10 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  @include container();
   margin-top: $nav-height;
 }
 .top-section {
+  @include container();
   height: calc(100vh - 110px);
   display: flex;
   justify-content: space-around;
@@ -178,9 +200,17 @@ export default {
 }
 
 .find-us {
+  @include container();
   margin-top: 40px;
   .headline {
     text-align: center;
+  }
+  .ribbons {
+    max-width: 500px;
+    margin: auto;
+    .crt-logo {
+      color: $color-white;
+    }
   }
   .title {
     font-size: 16px;
@@ -188,14 +218,18 @@ export default {
     display: flex;
     align-items: center;
   }
+  .facebook > .title {
+    justify-content: flex-end;
+  }
   svg {
     margin-left: 8px;
     height: 24px;
   }
   .facebook-ribbon {
     border: 3px solid $color-yellow;
-    width: 90%;
+    width: fit-content;
     margin: auto;
+    text-align: center;
   }
 }
 

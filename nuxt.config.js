@@ -21,6 +21,13 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
+    script: [
+      {
+        crossorigin: 'anonymous',
+        src: 'https://connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v9.0',
+        nonce: 'VBa1wwIO',
+      },
+    ],
     link: [
       {
         rel: 'icon',
