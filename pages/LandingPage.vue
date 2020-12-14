@@ -43,14 +43,14 @@
         <div class="facebook-ribbon">
           <div
             class="fb-page"
-            data-href="https://www.facebook.com/minaskaffebar"
+            data-href="https://www.facebook.com/minas-kaffebar"
             data-tabs="messages"
-            data-width="2000"
+            data-width="500"
             data-height="300"
             data-small-header="false"
-            data-adapt-container-width="false"
+            data-adapt-container-width="true"
             data-hide-cover="false"
-            data-show-facepile="false"
+            data-show-facepile="true"
           >
             <blockquote
               cite="https://www.facebook.com/minaskaffebar"
@@ -207,6 +207,7 @@ export default {
   }
   .ribbons {
     max-width: 500px;
+    width: 90%;
     margin: auto;
     .crt-logo {
       color: $color-white;
@@ -227,7 +228,7 @@ export default {
   }
   .facebook-ribbon {
     border: 3px solid $color-yellow;
-    width: fit-content;
+    width: 100%;
     margin: auto;
     text-align: center;
   }
