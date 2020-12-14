@@ -74,6 +74,12 @@ export default {
   z-index: 2;
   top: 0;
   width: 60%;
+  @include media('>phone') {
+    font-size: 20px;
+  }
+  @include media('>tablet') {
+    font-size: 24px;
+  }
   ::v-deep {
     p {
       width: fit-content;

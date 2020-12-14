@@ -2,21 +2,25 @@
   <div>
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-items">
-          <nuxt-link :to="'/events'">Events</nuxt-link>
-        </li>
-        <li class="nav-items">
-          <nuxt-link :to="'/menus'">Menus</nuxt-link>
-        </li>
+        <ul class="nav-section nav-left">
+          <li class="nav-items">
+            <nuxt-link :to="'/events'">Events</nuxt-link>
+          </li>
+          <li class="nav-items">
+            <nuxt-link :to="'/menus'">Menus</nuxt-link>
+          </li>
+        </ul>
         <li class="nav-items">
           <nuxt-link class="nav-icon" :to="'/'"> </nuxt-link>
         </li>
-        <li class="nav-items">
-          <nuxt-link :to="'/personalities'">Personalities</nuxt-link>
-        </li>
-        <li class="nav-items">
-          <nuxt-link :to="'/contact'">Contact</nuxt-link>
-        </li>
+        <ul class="nav-section nav-right">
+          <li class="nav-items">
+            <nuxt-link :to="'/personalities'">Personalities</nuxt-link>
+          </li>
+          <li class="nav-items">
+            <nuxt-link :to="'/contact'">Contact</nuxt-link>
+          </li>
+        </ul>
       </ul>
     </nav>
     <nav class="mobile-nav">
@@ -70,14 +74,20 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
+  @include container();
   display: none;
   @include media('>tablet') {
     display: block;
   }
   .nav-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+  }
+  .nav-section {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
   }
 }
 .mobile-nav {

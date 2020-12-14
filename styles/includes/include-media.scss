@@ -26,10 +26,10 @@
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
-///  $breakpoints: ('phone': 320px);
+////  $breakpoints: ('phone': 320px);
 ///
 $breakpoints: (
-  'phone': 400px,
+  'phone': 450px,
   'tablet': 900px,
   'desktop': 1024px,
 ) !default;
