@@ -26,6 +26,8 @@ export default {
         crossorigin: 'anonymous',
         src: 'https://connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v9.0',
         nonce: 'VBa1wwIO',
+        async: 'true',
+        defer: 'true',
       },
     ],
     link: [
