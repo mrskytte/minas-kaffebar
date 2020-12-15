@@ -19,8 +19,9 @@
       <div class="event-body" v-html="event.body" />
     </div>
     <div class="event-btn">
-      <Button />
+      <Button @click="handleClick" />
     </div>
+    <ReservationForm v-if="showForm" :event="event" @click="closeModal" />
   </div>
 </template>
 
@@ -28,6 +29,11 @@
 export default {
   props: {
     event: { type: Object, required: true },
+  },
+  data() {
+    return {
+      showForm: false,
+    }
   },
   computed: {
     date() {
@@ -45,6 +51,16 @@ export default {
         hour: '2-digit',
         minute: '2-digit',
       })
+    },
+  },
+  methods: {
+    handleClick() {
+      document.body.classList.add('lock')
+      this.showForm = true
+    },
+    closeModal() {
+      document.body.classList.remove('lock')
+      this.showForm = false
     },
   },
 }
