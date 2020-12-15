@@ -227,15 +227,15 @@ li {
   padding-top: 12px;
 }
 
-.bold-breadcrumb {
-  font-weight: 500;
-}
-
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
-.page-enter,
+.page-enter {
+  opacity: 0;
+  transform: translateX(15vw);
+}
 .page-leave-to {
   opacity: 0;
+  transform: translateX(-35vw);
 }
