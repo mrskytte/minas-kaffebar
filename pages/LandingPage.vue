@@ -169,7 +169,6 @@ export default {
     }
   }
   .random-text {
-    margin-top: -220px;
     display: inline-block;
     width: 60%;
     text-align: right;
@@ -178,7 +177,7 @@ export default {
     font-family: $font-title;
     @include media('>phone') {
       width: 50%;
-      margin-top: -100;
+      margin-top: -100px;
       font-size: 48px;
     }
     @include media('>tablet') {
