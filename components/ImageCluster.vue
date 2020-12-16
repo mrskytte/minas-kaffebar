@@ -11,6 +11,7 @@
           <div class="image-wrap">
             <img
               class="image"
+              alt="Experiences from Minas"
               :src="image.responsiveImage.src"
               :srcset="image.responsiveImage.srcSet"
             />
@@ -28,6 +29,7 @@
           <div class="image-wrap">
             <img
               class="image"
+              alt="Experiences from Minas"
               :src="image.responsiveImage.src"
               :srcset="image.responsiveImage.srcSet"
             />

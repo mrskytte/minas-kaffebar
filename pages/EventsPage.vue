@@ -39,7 +39,5 @@ export default {
     align-items: center;
     justify-content: space-between;
   }
-  @include media('>tablet') {
-  }
 }
 </style>

@@ -11,6 +11,7 @@
       >
         <img
           class="image"
+          alt="Stop motion frame"
           :src="image.responsiveImage.src"
           :srcset="image.responsiveImage.srcSet"
         />

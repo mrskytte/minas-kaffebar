@@ -19,7 +19,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Vi er din nye kaffebar. Vi har et top lækkert sortiment af naturvin, kaffe, fadøk, toast, kager fra dessert dragen og MEGET andet lækkert - det fede er at hos os har vi en enhedspris på 20 kr. Det er hos os det sker. Vi glæder os til at se dig!',
+      },
     ],
     script: [
       {

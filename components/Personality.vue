@@ -3,7 +3,7 @@
     <div class="image-wrapper">
       <img
         :src="data.image.responsiveImage.src"
-        alt=""
+        :alt="data.name"
         :srcset="data.image.responsiveImage.srcSet"
       />
     </div>

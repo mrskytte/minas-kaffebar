@@ -3,7 +3,7 @@
     <div class="event-image">
       <img
         :src="event.image.responsiveImage.src"
-        alt=""
+        :alt="event.headline"
         :srcset="event.image.responsiveImage.srcSet"
       />
     </div>
