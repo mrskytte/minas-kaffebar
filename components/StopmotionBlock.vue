@@ -86,7 +86,7 @@ export default {
     p {
       width: fit-content;
       display: block;
-      background-color: $color-white;
+      background-color: rgba($color-white, 0.75);
       padding: 8px 8px 8px 8px;
       margin-bottom: 8px;
     }
