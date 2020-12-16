@@ -25,6 +25,10 @@ export default {
         content:
           'Vi er din nye kaffebar. Vi har et top lækkert sortiment af naturvin, kaffe, fadøk, toast, kager fra dessert dragen og MEGET andet lækkert - det fede er at hos os har vi en enhedspris på 20 kr. Det er hos os det sker. Vi glæder os til at se dig!',
       },
+      {
+        name: 'keywords',
+        content: 'Minas, quality, coffee, stories, cozy',
+      },
     ],
     script: [
       {
